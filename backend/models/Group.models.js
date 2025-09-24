@@ -10,13 +10,7 @@ const groupSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-  ],
-  expenses: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Expense",
-    },
-  ],
+  ]
 }, { timestamps: true });
 
 module.exports = mongoose.model("Group", groupSchema);

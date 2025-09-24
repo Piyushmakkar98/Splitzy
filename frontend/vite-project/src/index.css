@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... any other styles you have ... */
+
+body {
+    /* This color is a dark gray similar to your gradient's base */
+    background-color: #0D1117; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
