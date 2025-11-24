@@ -101,6 +101,7 @@ export default function AddExpenseModal({ user, groupId, onClose, onExpenseAdded
     
     try {
       const res = await axios.post(`${API_URL}/api/expenses`, payload, { withCredentials: true });
+      //const res2 = await axios.post(`${API_URL}/api/expenses/create`, payload, { withCredentials: true });
       onExpenseAdded(res.data);
       onClose();
     } catch (err) {

@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import MonthlyExpenseChart from "../components/MonthlyExpenseChart";
 import CategoryExpenseChart from "../components/CategoryExpenseChart";
 import AddExpenseModal from "../components/AddExpenseModal";
+import { io } from "socket.io-client";
+import { socket } from "../socket";
+import { toast } from "react-hot-toast";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
@@ -15,6 +18,27 @@ export default function Dashboard() {
     loading: true,
     error: null,
   });
+
+  useEffect(() => {
+    if (!dashboardState.data?.profile?._id) return;
+  
+    socket.auth = { userId: dashboardState.data.profile._id };
+    socket.connect();
+  
+    socket.on("connect", () => {
+      console.log("🔥 Socket Connected!", socket.id);
+    });
+  
+    socket.on("expense_notification", (data) => {
+      console.log("📩 Notification received:", data);
+      toast.success(`${data.message} ₹${data.amount}`);
+    });
+  
+    return () => {
+      socket.off("expense_notification");
+    };
+  }, [dashboardState.data]);
+
   const [monthlyChartData, setMonthlyChartData] = useState([]);
   const [categoryChartData, setCategoryChartData] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,6 +99,7 @@ export default function Dashboard() {
       })
       .replace("₹", "₹");
   };
+
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-gray-100">

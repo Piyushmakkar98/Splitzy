@@ -7,6 +7,7 @@ import ExpensesPage from "./pages/ExpensePage";
 import GroupsPage from "./pages/GroupsPage";
 import SettingsPage from "./pages/SettingsPage";
 import GroupDetailPage from "./pages/GroupDetailPage";
+import Settlements from "./pages/Settlements";
 
 
 
@@ -23,6 +24,7 @@ function App(){
         <Route path="/groups" element={<GroupsPage />} /> 
         <Route path="/groups/:groupId" element={<GroupDetailPage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/settlements" element={<Settlements />} />  
       </Routes>
     </Router>
     </>
