@@ -11,11 +11,11 @@ const routerPaths = require("./routes/authRoutes");
 const expenseRoutes = require("./routes/expense");
 const settlementRoutes = require("./routes/settlements.routes");
 
-// Middlewares
 app.use(cors({
-    origin: "*",
+    origin: "https://splitzy-blond.vercel.app",
     credentials: true,
-}));
+  }));
+  
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
