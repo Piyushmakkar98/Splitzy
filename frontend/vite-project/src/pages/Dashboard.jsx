@@ -10,7 +10,7 @@ import { io } from "socket.io-client";
 import { socket } from "../socket";
 import { toast } from "react-hot-toast";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const API_URL = import.meta.env.VITE_API_URL || "https://splitzy-1.onrender.com";
 
 export default function Dashboard() {
   const [dashboardState, setDashboardState] = useState({

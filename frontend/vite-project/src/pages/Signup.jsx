@@ -16,7 +16,7 @@ function Signup() {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/signup",
+        "https://splitzy-1.onrender.com/signup",
         { name, email, password },
         { withCredentials: true } // sends/receives cookies
       );

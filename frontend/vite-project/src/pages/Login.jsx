@@ -15,7 +15,7 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/login", // ✅ match backend
+        "https://splitzy-1.onrender.com/login", // ✅ match backend
         { email, password },
         { withCredentials: true }
       );

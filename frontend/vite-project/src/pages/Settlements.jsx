@@ -4,7 +4,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:4000";
+const API_URL = "https://splitzy-1.onrender.com";
 
 export default function Settlements() {
   const [balances, setBalances] = useState([]);

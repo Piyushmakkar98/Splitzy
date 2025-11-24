@@ -4,7 +4,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import CreateGroupModal from '../components/CreateGroupModal';
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const API_URL = import.meta.env.VITE_API_URL || "https://splitzy-1.onrender.com";
 
 export default function GroupsPage() {
   const [user, setUser] = useState(null);
