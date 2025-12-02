@@ -9,7 +9,7 @@ const getCookieOptions = () => {
     return {
         httpOnly: true,
         // ✨ 'secure' flag is now always false for development
-        secure: false,
+        secure: true,
         sameSite: 'none', // Helps mitigate CSRF attacks
         maxAge: twoHours
     };
