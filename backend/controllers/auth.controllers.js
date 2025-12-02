@@ -10,7 +10,7 @@ const getCookieOptions = () => {
         httpOnly: true,
         // ✨ 'secure' flag is now always false for development
         secure: false,
-        sameSite: 'strict', // Helps mitigate CSRF attacks
+        sameSite: 'none', // Helps mitigate CSRF attacks
         maxAge: twoHours
     };
 };
